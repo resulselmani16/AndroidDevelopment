@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CacttusEducation_21_22</string>
+    <string name="write_your_email">Write your email</string>
+    <string name="button_30">Button 30%</string>
+    <string name="button_70">Button 70%</string>
+    <string name="button_1">Button 1</string>
+    <string name="cacttus_education">Cacttus Education</string>
+    <string name="password">Password</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="log_in">Log In</string>
+    <string name="dont_have_an_account">Don\'t have an account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="open_url">Open URL</string>
+    <string name="call_number">call number</string>
+    <string name="MyPhoneNumber">+38346183775</string>
+    <string name="username_or_password_wrong">Wrong email or password</string>
+    <string name="fill_fields">Please fill all fields</string>
+    <string name="welcome_user">Welcome, Resul</string>
+</resources>
