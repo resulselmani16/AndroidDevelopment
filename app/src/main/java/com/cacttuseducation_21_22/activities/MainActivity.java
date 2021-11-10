@@ -1,4 +1,4 @@
-package com.cacttuseducation_21_22;
+package com.cacttuseducation_21_22.activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,23 +7,55 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.cacttuseducation_21_22.R;
 
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+    Button btnLoginActivity, btnCalculator, btnFunFacts, btnListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnLoginActivity = findViewById(R.id.btnLoginActivity);
+        btnCalculator = findViewById(R.id.btnCalculatorActivity);
+        btnFunFacts = findViewById(R.id.btnFactsActivity);
+        btnListView = findViewById(R.id.btnListView);
+
+    btnLoginActivity.setOnClickListener(v -> {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+    });
+    btnCalculator.setOnClickListener(v -> {
+        Intent intent = new Intent(MainActivity.this, Calculator.class);
+        startActivity(intent);
+    });
+    btnFunFacts.setOnClickListener(v -> {
+        Intent intent = new Intent(MainActivity.this, FunFactsActivity.class);
+        startActivity(intent);
+    });
+    btnListView.setOnClickListener(v -> {
+        Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+        startActivity(intent);
+    });
+
         System.out.println("metoda e thirrur eshte: onCreate");
 
         Toast.makeText(MainActivity.this, "Hello World", Toast.LENGTH_LONG).show();
-
+        if(getIntent().getExtras() != null){
+            boolean value = getIntent().getBooleanExtra("booleanKey", false);
+            System.out.println("Vlera ne ardhje eshte: " + value);
+            String username = getIntent().getStringExtra("username");
+            System.out.println("Vlera ne ardhje eshte: " + username);
+        }
     }
 
     @Override
@@ -65,9 +97,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
       //  super.onBackPressed();
-        showAlertDialog();
+//        showAlertDialog();
         //showTimePickerDialog();
        // showProgressDialog();
+        Intent intent = getIntent();
+        intent.putExtra("key", "ReskiPaski");
+        setResult(RESULT_CANCELED, intent);
+        finish();
     }
 
     private void showProgressDialog() {

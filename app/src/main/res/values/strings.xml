@@ -16,4 +16,5 @@
     <string name="username_or_password_wrong">Wrong email or password</string>
     <string name="fill_fields">Please fill all fields</string>
     <string name="welcome_user">Welcome, Resul</string>
+    <string name="result">Result</string>
 </resources>

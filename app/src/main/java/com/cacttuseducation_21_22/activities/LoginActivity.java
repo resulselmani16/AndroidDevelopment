@@ -1,5 +1,6 @@
-package com.cacttuseducation_21_22;
+package com.cacttuseducation_21_22.activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,11 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.net.URI;
+import com.cacttuseducation_21_22.R;
 
 public class LoginActivity extends AppCompatActivity {
     EditText etEmailOrUsername, etPassword;
     Button btnLogin, btnOpenUrl, btnCallNum;
+
+    public static final int REQUEST_CODE_MAIN_ACTIVITY = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +38,14 @@ public class LoginActivity extends AppCompatActivity {
                 String correctUsername = "reskipaski";
                 String correctPassword = "12345678";
 
+
                 if (emailOrUsername.length() > 5 && password.length() > 6) {
                     if (etEmailOrUsername.getText().toString().equals(correctUsername) && etPassword.getText().toString().equals(correctPassword)) {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
+                        intent.putExtra("booleanKey", true);
+                        intent.putExtra("username", "reskipaski");
+                        startActivityForResult(intent, REQUEST_CODE_MAIN_ACTIVITY);
+//                        finish();
 
                         Toast.makeText(LoginActivity.this, getString(R.string.welcome_user), Toast.LENGTH_SHORT).show();
                     } else {
@@ -77,5 +83,20 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnOpenUrl = findViewById(R.id.btnOpenUrl);
         btnCallNum = findViewById(R.id.callNum);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(data == null) {
+            Toast.makeText(LoginActivity.this, "Data are null", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(requestCode == REQUEST_CODE_MAIN_ACTIVITY && resultCode == RESULT_OK){
+            String result = data.getStringExtra("key");
+            Toast.makeText(LoginActivity.this, "Result is: " + result, Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
