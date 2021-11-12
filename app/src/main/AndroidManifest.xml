@@ -13,11 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CacttusEducation_21_22">
         <activity
+            android:name=".activities.PersonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TestingActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ListViewActivity"
             android:exported="false" />
         <activity
             android:name=".activities.FunFactsActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activities.Calculator"
             android:exported="true" />

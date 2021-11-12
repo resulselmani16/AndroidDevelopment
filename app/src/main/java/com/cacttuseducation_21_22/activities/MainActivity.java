@@ -18,7 +18,7 @@ import com.cacttuseducation_21_22.R;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnLoginActivity, btnCalculator, btnFunFacts, btnListView;
+    Button btnLoginActivity, btnCalculator, btnFunFacts, btnListView, btnPersonList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btnCalculator = findViewById(R.id.btnCalculatorActivity);
         btnFunFacts = findViewById(R.id.btnFactsActivity);
         btnListView = findViewById(R.id.btnListView);
+        btnPersonList = findViewById(R.id.btnPersonList);
 
     btnLoginActivity.setOnClickListener(v -> {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -44,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     });
     btnListView.setOnClickListener(v -> {
         Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+        startActivity(intent);
+    });
+    btnPersonList.setOnClickListener(v ->{
+        Intent intent = new Intent(MainActivity.this, PersonActivity.class);
         startActivity(intent);
     });
 
