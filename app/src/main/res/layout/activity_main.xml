@@ -36,6 +36,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Person List"/>
+
+    <Button
+        android:id="@+id/btnWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weather"/>
+
+    <Button
+        android:id="@+id/btnCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Companies"/>
 </LinearLayout>
 
 </ScrollView>

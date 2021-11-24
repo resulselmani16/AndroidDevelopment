@@ -13,6 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CacttusEducation_21_22">
         <activity
+            android:name=".activities.ConstraintLayoutExampleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CompanyDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.WeatherActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.PersonActivity"
             android:exported="false" />
         <activity
