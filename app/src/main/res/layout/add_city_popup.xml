@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:gravity="center"
-android:visibility="gone"
-android:clickable="true"
-android:background="#D3D2D2"
-android:id="@+id/relAddCityPopup"
-android:padding="@dimen/space_15"
-android:layout_height="match_parent"
-android:focusable="true">
-
-<LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:background="@color/colorGray"
-    android:padding="@dimen/space_20"
-    android:orientation="vertical">
-    <EditText
-        android:id="@+id/etCity"
+    android:gravity="center"
+    android:visibility="gone"
+    android:clickable="true"
+    android:background="#D3D2D2"
+    android:id="@+id/relAddCityPopup"
+    android:padding="@dimen/space_15"
+    android:layout_height="match_parent"
+    android:focusable="true">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Write City"
-        android:inputType="text"
-        android:textSize="@dimen/text_size_20"/>
+        android:layout_centerInParent="true"
+        android:background="@color/colorGray"
+        android:padding="@dimen/space_20"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Write Status"
-        android:inputType="text"
-        android:textSize="@dimen/text_size_20"/>
+        <EditText
+            android:id="@+id/etCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bad_script"
+            android:hint="Write City"
+            android:inputType="text"
+            android:textSize="@dimen/text_size_20" />
 
-    <EditText
-        android:id="@+id/etTemperature"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Write Temperature"
-        android:inputType="numberDecimal"
-        android:textSize="@dimen/text_size_20"/>
+        <EditText
+            android:id="@+id/etStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write Status"
+            android:fontFamily="@font/bad_script"
+            android:inputType="text"
+            android:textSize="@dimen/text_size_20"/>
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:text="Submit"
-        android:layout_marginTop="@dimen/space_30"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etTemperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write Temperature"
+            android:fontFamily="@font/bad_script"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/text_size_20"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnSubmit"
+            android:text="Submit"
+            android:fontFamily="@font/bad_script"
+            android:layout_marginTop="@dimen/space_30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

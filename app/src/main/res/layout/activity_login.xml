@@ -33,9 +33,9 @@
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:layout_centerInParent="true"
         android:hint="@string/write_your_email"
-        android:layout_centerInParent="true"/>
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -55,30 +55,31 @@
         android:layout_marginTop="@dimen/space_50"/>
 
     <TextView
-        android:id="@+id/forgotPassword"
+        android:id="@+id/tvForgotYourPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forgot_your_password"
         android:layout_below="@+id/btnLogin"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/colorRed"
-        android:layout_marginTop="@dimen/space_5"/>
+        android:layout_marginTop="@dimen/space_5"
+        android:text="@string/forgot_your_password"
+        android:textColor="@color/colorRed" />
 
     <Button
         android:id="@+id/btnOpenUrl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/open_url"
-        android:layout_below="@+id/forgotPassword"
-        android:layout_marginTop="@dimen/space_10"/>
+        android:layout_below="@id/tvForgotYourPassword"
+        android:layout_marginTop="@dimen/space_10"
+        android:text="Open URL" />
 
     <Button
+        android:id="@+id/btnCallNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/callNum"
-        android:text="@string/call_number"
-        android:layout_below="@+id/btnOpenUrl"
-        />
+        android:text="Call Number"
+        android:layout_below="@id/btnOpenUrl"/>
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"

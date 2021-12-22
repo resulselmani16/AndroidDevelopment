@@ -4,22 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/CacttusEducation/AndroidStudioProjects/CacttusEducation_21_22/app/src/main/res/layout/activity_main.xml" value="0.23596014492753623" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_calculator.xml" value="0.1" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_company.xml" value="0.17135416666666667" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_company_detail.xml" value="0.10869565217391304" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_fun_facts.xml" value="0.1" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_list_view.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_person.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_testing.xml" value="0.1490036231884058" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_weather.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/add_city_popup.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/confirm_popup.xml" value="0.17147922998986828" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/header.xml" value="0.17147922998986828" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/item_company.xml" value="0.17135416666666667" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/person_item.xml" value="0.1" />
-        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/weather_item.xml" value="0.22" />
+        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_hero_details.xml" value="0.11639492753623189" />
+        <entry key="..\:/Users/resul/OneDrive/Desktop/CacttusEducation_21_22-master/app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>
   </component>

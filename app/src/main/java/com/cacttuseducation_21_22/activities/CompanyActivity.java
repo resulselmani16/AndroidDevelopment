@@ -19,41 +19,41 @@ public class CompanyActivity extends AppCompatActivity {
     ArrayList<Company> arrayList = new ArrayList<>();
     CompanyAdapter companyAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
         gridView = findViewById(R.id.gridView);
+
         populateArrayList();
-        companyAdapter = new CompanyAdapter(CompanyActivity.this, arrayList);
+
+        companyAdapter = new CompanyAdapter(CompanyActivity.this,arrayList);
         gridView.setAdapter(companyAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(CompanyActivity.this, CompanyDetailActivity.class);
-                Company company = arrayList.get(i);
-                intent.putExtra("companyName", company.getCompanyName());
-                intent.putExtra("companyValue", company.getCompanyValue());
+                Company company = arrayList.get(position);
+                intent.putExtra("company", company);
                 startActivity(intent);
             }
         });
+
     }
 
-
     private void populateArrayList() {
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Samsung", "$150k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Apple", "$200k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Xiaomi", "$120k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Siemens", "$110k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Motorola", "$100k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Lenovo", "$170k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Huawei", "$150k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Samsung", "$150k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Xiaomi", "$120k"));
-        arrayList.add(new Company(R.mipmap.ic_launcher_round, "Siemens", "$110k"));
-
-
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Samsung", "100k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Apple", "120k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Siemens", "90k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Dell", "120k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Google", "160k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Motorola", "140k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Huawei", "170k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Sony", "120k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Motorola", "160k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Huawei", "190k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Siemens", "130k"));
+        arrayList.add(new Company(R.mipmap.ic_launcher,"Dell", "120k"));
     }
 }

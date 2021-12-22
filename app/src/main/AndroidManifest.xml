@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cacttuseducation_21_22">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,34 +14,56 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CacttusEducation_21_22">
         <activity
-            android:name=".activities.ConstraintLayoutExampleActivity"
+            android:name=".activities.HeroDetailsActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.HeroesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.DrawerLayoutActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".activities.DynamicFragmentHolderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.StaticFragmentHolderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.RecyclerViewExampleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.PandaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ConstraintLayoutExampleActivity"
+            android:exported="true" />
         <activity
             android:name=".activities.CompanyDetailActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activities.CompanyActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activities.WeatherActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activities.PersonActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
-            android:name=".activities.TestingActivity"
-            android:exported="false" />
+            android:name=".activities.ListViewDetailsActivity"
+            android:exported="true" />
         <activity
             android:name=".activities.ListViewActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activities.FunFactsActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.Calculator"
+            android:name=".activities.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activities.CalculatorActivity"
             android:exported="true" />
         <activity
             android:name=".activities.UIExampleActivity"

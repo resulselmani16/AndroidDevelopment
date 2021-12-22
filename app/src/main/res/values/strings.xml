@@ -10,13 +10,19 @@
     <string name="log_in">Log In</string>
     <string name="dont_have_an_account">Don\'t have an account</string>
     <string name="sign_up">Sign Up</string>
-    <string name="open_url">Open URL</string>
-    <string name="call_number">call number</string>
-    <string name="MyPhoneNumber">+38346183775</string>
-    <string name="username_or_password_wrong">Wrong email or password</string>
-    <string name="fill_fields">Please fill all fields</string>
-    <string name="welcome_user">Welcome, Resul</string>
+    <string name="phone_number">tel:+123456</string>
+    <string name="google_url">https://www.google.com</string>
+    <string name="username_or_password_wrong">Username or Password are wrong</string>
+    <string name="please_fill_all_fields">Pslease fill all the fields!</string>
     <string name="result">Result</string>
+    <string name="did_you_know">Did you know?</string>
+    <string name="please_fill_all_the_fields">Please fill all the fields!</string>
     <string name="grade_celcius">°C</string>
-    <string name="please_fill_all_the_fields">Please fill all the fields</string>
+    <string name="kungfu_panda">KUNGFU PANDA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="first_fragment">First Fragment</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="you_just_displayed_this_awesome_popup">You just displayed this awesome popup</string>
 </resources>

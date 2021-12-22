@@ -14,10 +14,12 @@ import android.widget.Toast;
 import com.cacttuseducation_21_22.R;
 
 public class LoginActivity extends AppCompatActivity {
+
     EditText etEmailOrUsername, etPassword;
-    Button btnLogin, btnOpenUrl, btnCallNum;
+    Button btnLogin, btnOpenUrl, btnCallNumber;
 
     public static final int REQUEST_CODE_MAIN_ACTIVITY = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,33 +28,33 @@ public class LoginActivity extends AppCompatActivity {
 
         findViews();
         onClickListeners();
-
     }
 
     private void onClickListeners() {
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String emailOrUsername = etEmailOrUsername.getText().toString();
                 String password = etPassword.getText().toString();
-                String correctUsername = "reskipaski";
+
+                String correctUsername = "cacttus";
                 String correctPassword = "12345678";
 
-
-                if (emailOrUsername.length() > 5 && password.length() > 6) {
-                    if (etEmailOrUsername.getText().toString().equals(correctUsername) && etPassword.getText().toString().equals(correctPassword)) {
+                if (emailOrUsername.length() > 6 && password.length() > 6){
+                    if (emailOrUsername.equals(correctUsername) && password.equals(correctPassword)){
+                        // open main activity
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        intent.putExtra("booleanKey", true);
-                        intent.putExtra("username", "reskipaski");
-                        startActivityForResult(intent, REQUEST_CODE_MAIN_ACTIVITY);
-//                        finish();
-
-                        Toast.makeText(LoginActivity.this, getString(R.string.welcome_user), Toast.LENGTH_SHORT).show();
-                    } else {
+                        intent.putExtra("booleanKey",true);
+                        intent.putExtra("stringKey","CacttusEducation");
+                        startActivityForResult(intent,REQUEST_CODE_MAIN_ACTIVITY);
+                       // finish();
+                    }else {
                         Toast.makeText(LoginActivity.this, getString(R.string.username_or_password_wrong), Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    Toast.makeText(LoginActivity.this, getString(R.string.fill_fields), Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(LoginActivity.this, getString(R.string.please_fill_all_fields), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -62,16 +64,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://www.google.com"));
+                intent.setData(Uri.parse(getString(R.string.google_url)));
                 startActivity(intent);
+
             }
         });
 
-        btnCallNum.setOnClickListener(new View.OnClickListener(){
+        btnCallNumber.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel: " + getString(R.string.MyPhoneNumber)));
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.phone_number)));
                 startActivity(intent);
             }
         });
@@ -82,19 +84,20 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnOpenUrl = findViewById(R.id.btnOpenUrl);
-        btnCallNum = findViewById(R.id.callNum);
+        btnCallNumber = findViewById(R.id.btnCallNumber);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(data == null) {
+
+        if (data == null){
             Toast.makeText(LoginActivity.this, "Data are null", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if(requestCode == REQUEST_CODE_MAIN_ACTIVITY && resultCode == RESULT_OK){
-            String result = data.getStringExtra("key");
+        if (requestCode == REQUEST_CODE_MAIN_ACTIVITY && resultCode == RESULT_OK){
+            int result = data.getIntExtra("key",-1);
             Toast.makeText(LoginActivity.this, "Result is: " + result, Toast.LENGTH_SHORT).show();
         }
 

@@ -3,6 +3,7 @@ package com.cacttuseducation_21_22.models;
 import java.util.Random;
 
 public class FactBook {
+
     public String[] facts = {"Ants stretch when they wake up in the morning.",
             "Ostriches can run faster than horses.",
             "Olympic gold medals are actually made mostly of silver.",
@@ -14,13 +15,16 @@ public class FactBook {
             "On average, it takes 66 days to form a new habit.",
             "Mammoths still walked the earth when the Great Pyramid was being built."};
 
-    public String getFact() {
+
+    public String getFact(){
         String fact;
+
         Random random = new Random();
         int randomInt = random.nextInt(facts.length);
 
         fact = facts[randomInt];
-        return fact;
 
+        return fact;
     }
+
 }

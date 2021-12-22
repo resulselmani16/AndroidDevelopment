@@ -1,53 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <Button
-        android:id="@+id/btnLoginActivity"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"/>
-    <Button
-        android:id="@+id/btnCalculatorActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calculator"/>
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnFactsActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fun facts"/>
-    <Button
-        android:id="@+id/btnListView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="List view"/>
-    <Button
-        android:id="@+id/btnPersonList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Person List"/>
+        <Button
+            android:id="@+id/btnLoginActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login" />
 
-    <Button
-        android:id="@+id/btnWeather"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Weather"/>
+        <Button
+            android:id="@+id/btnCalculator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculator" />
 
-    <Button
-        android:id="@+id/btnCompany"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Companies"/>
-</LinearLayout>
+        <Button
+            android:id="@+id/btnFunFacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fun Facts" />
+
+        <Button
+            android:id="@+id/btnListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ListView" />
+
+        <Button
+            android:id="@+id/btnPersonList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PersonListView" />
+
+        <Button
+            android:id="@+id/btnWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weather" />
+
+        <Button
+            android:id="@+id/btnCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Company" />
+
+        <Button
+            android:id="@+id/btnPanda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Panda" />
+
+        <Button
+            android:id="@+id/btnRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RecyclerView" />
+
+        <Button
+            android:id="@+id/btnStaticFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Static Fragment" />
+
+        <Button
+            android:id="@+id/btnDynamicFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dynamic Fragment" />
+
+        <Button
+            android:id="@+id/btnMenuExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu example" />
+
+        <Button
+            android:id="@+id/btnHeroes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Heroes api call" />
+
+    </LinearLayout>
 
 </ScrollView>

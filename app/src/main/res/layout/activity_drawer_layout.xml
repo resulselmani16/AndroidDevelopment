@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    tools:context=".activities.DrawerLayoutActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_50"
+            android:background="@color/colorBlue">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/ivMenu"
+                android:layout_alignParentStart="true"
+                android:padding="@dimen/space_5"
+                android:src="@mipmap/menu_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cacttus_education"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/text_size_26"
+                android:textColor="@color/white"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relFragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/relActionBar"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_gravity="start"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlue"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Side Menu"
+            android:textSize="@dimen/text_size_22"
+            android:layout_marginTop="@dimen/space_30"
+            android:layout_marginStart="@dimen/space_10"/>
+
+        <TextView
+            android:id="@+id/tvFirstFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Fragment"
+            android:textSize="@dimen/text_size_22"
+            android:layout_marginTop="@dimen/space_30"
+            android:layout_marginStart="@dimen/space_10"/>
+
+        <TextView
+            android:id="@+id/tvSecondFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Second Fragment"
+            android:textSize="@dimen/text_size_22"
+            android:layout_marginTop="@dimen/space_30"
+            android:layout_marginStart="@dimen/space_10"/>
+
+
+    </LinearLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

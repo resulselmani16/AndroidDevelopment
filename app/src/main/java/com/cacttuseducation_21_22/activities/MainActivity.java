@@ -18,7 +18,10 @@ import com.cacttuseducation_21_22.R;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnLoginActivity, btnCalculator, btnFunFacts, btnListView, btnPersonList, btnWeather, btnCompany;
+
+    Button btnLoginActivity, btnCalculator, btnFunFacts, btnListView,
+    btnPersonList,btnWeather,btnCompany, btnPanda, btnRecyclerView, btnStaticFragment,
+    btnDynamicFragment,btnMenuExample,btnHeroes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,52 +29,92 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnLoginActivity = findViewById(R.id.btnLoginActivity);
-        btnCalculator = findViewById(R.id.btnCalculatorActivity);
-        btnFunFacts = findViewById(R.id.btnFactsActivity);
+        btnCalculator = findViewById(R.id.btnCalculator);
+        btnFunFacts = findViewById(R.id.btnFunFacts);
         btnListView = findViewById(R.id.btnListView);
         btnPersonList = findViewById(R.id.btnPersonList);
         btnWeather = findViewById(R.id.btnWeather);
         btnCompany = findViewById(R.id.btnCompany);
+        btnPanda = findViewById(R.id.btnPanda);
+        btnRecyclerView = findViewById(R.id.btnRecyclerView);
+        btnStaticFragment = findViewById(R.id.btnStaticFragment);
+        btnDynamicFragment = findViewById(R.id.btnDynamicFragment);
+        btnMenuExample = findViewById(R.id.btnMenuExample);
+        btnHeroes = findViewById(R.id.btnHeroes);
+
+        btnHeroes.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, HeroesActivity.class);
+            startActivity(intent);
+        });
 
 
-    btnLoginActivity.setOnClickListener(v -> {
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(intent);
-    });
-    btnCalculator.setOnClickListener(v -> {
-        Intent intent = new Intent(MainActivity.this, Calculator.class);
-        startActivity(intent);
-    });
-    btnFunFacts.setOnClickListener(v -> {
-        Intent intent = new Intent(MainActivity.this, FunFactsActivity.class);
-        startActivity(intent);
-    });
-    btnListView.setOnClickListener(v -> {
-        Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
-        startActivity(intent);
-    });
-    btnPersonList.setOnClickListener(v ->{
-        Intent intent = new Intent(MainActivity.this, PersonActivity.class);
-        startActivity(intent);
-    });
+        btnLoginActivity.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
 
+        btnCalculator.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+            startActivity(intent);
+        });
+
+        btnFunFacts.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FunFactsActivity.class);
+            startActivity(intent);
+        });
+
+        btnListView.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+            startActivity(intent);
+        });
+
+        btnPersonList.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PersonActivity.class);
+            startActivity(intent);
+        });
         btnWeather.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
             startActivity(intent);
         });
+
         btnCompany.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CompanyActivity.class);
+            startActivity(intent);
+        });
+
+        btnPanda.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PandaActivity.class);
+            startActivity(intent);
+        });
+
+        btnRecyclerView.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RecyclerViewExampleActivity.class);
+            startActivity(intent);
+        });
+
+        btnStaticFragment.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, StaticFragmentHolderActivity.class);
+            startActivity(intent);
+        });
+
+        btnDynamicFragment.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DynamicFragmentHolderActivity.class);
+            startActivity(intent);
+        });
+
+        btnMenuExample.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DrawerLayoutActivity.class);
             startActivity(intent);
         });
 
         System.out.println("metoda e thirrur eshte: onCreate");
 
         Toast.makeText(MainActivity.this, "Hello World", Toast.LENGTH_LONG).show();
-        if(getIntent().getExtras() != null){
-            boolean value = getIntent().getBooleanExtra("booleanKey", false);
-            System.out.println("Vlera ne ardhje eshte: " + value);
-            String username = getIntent().getStringExtra("username");
-            System.out.println("Vlera ne ardhje eshte: " + username);
+
+        if (getIntent().getExtras() != null){
+            boolean value = getIntent().getBooleanExtra("booleanKey",false);
+            String stringValue = getIntent().getStringExtra("stringKey");
+            System.out.println("Vlera ne ardhje eshte: " + stringValue);
         }
     }
 
@@ -114,12 +157,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
       //  super.onBackPressed();
-//        showAlertDialog();
+        //showAlertDialog();
         //showTimePickerDialog();
        // showProgressDialog();
+
         Intent intent = getIntent();
-        intent.putExtra("key", "ReskiPaski");
-        setResult(RESULT_CANCELED, intent);
+        intent.putExtra("key",100);
+        setResult(RESULT_OK,intent);
         finish();
     }
 

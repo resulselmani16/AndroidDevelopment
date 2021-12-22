@@ -1,6 +1,9 @@
 package com.cacttuseducation_21_22.models;
 
-public class Company {
+import java.io.Serializable;
+
+public class Company implements Serializable {
+
     private int companyImage;
     private String companyName;
     private String companyValue;

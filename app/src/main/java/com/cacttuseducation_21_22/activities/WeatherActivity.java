@@ -2,9 +2,11 @@ package com.cacttuseducation_21_22.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,9 +38,11 @@ public class WeatherActivity extends AppCompatActivity {
         findViews();
         populateArrayList();
         onClicks();
-        weatherAdapter = new WeatherAdapter(WeatherActivity.this, weatherArrayList);
+
+        weatherAdapter = new WeatherAdapter(WeatherActivity.this,weatherArrayList);
         weatherListView.setAdapter(weatherAdapter);
-        View headerView = ((LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE)).inflate(R.layout.header, null, false);
+
+        View headerView = ((LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE)).inflate(R.layout.header,null,false);
         weatherListView.addHeaderView(headerView);
     }
 
@@ -47,13 +51,15 @@ public class WeatherActivity extends AppCompatActivity {
             popup.setVisibility(View.VISIBLE);
         });
 
-        btnSubmit.setOnClickListener(v ->{
-            if(etCity.length() > 0 && etStatus.length() > 0 && etTemperature.length() > 0){
+        btnSubmit.setOnClickListener(view ->{
+            if (etCity.length() > 0 && etStatus.length() > 0 && etTemperature.length() > 0){
                 popup.setVisibility(View.GONE);
                 String city = etCity.getText().toString();
                 String status = etStatus.getText().toString();
                 String temperature = etTemperature.getText().toString() + getString(R.string.grade_celcius);
-                weatherArrayList.add(0, new Weather(R.mipmap.ic_launcher, city, status, temperature));
+
+                weatherArrayList.add(0,new Weather(R.mipmap.ic_launcher,
+                        city,status,temperature));
 
                 weatherAdapter.notifyDataSetChanged();
 
@@ -61,56 +67,60 @@ public class WeatherActivity extends AppCompatActivity {
                 etTemperature.getText().clear();
                 etStatus.getText().clear();
 
-                Util.hideKeyboard(WeatherActivity.this, etCity);
-            } else{
+                Util.hideKeyboard(WeatherActivity.this,etCity);
+
+            }else {
                 Toast.makeText(WeatherActivity.this, getString(R.string.please_fill_all_the_fields), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        weatherListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
             }
         });
 
         weatherListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
                 relConfirmPopup.setVisibility(View.VISIBLE);
-                positionClicked = i - 1;
+                positionClicked = position - 1;
+
                 return false;
+            }
+        });
+
+        weatherListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
             }
         });
 
         btnNo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 relConfirmPopup.setVisibility(View.GONE);
             }
         });
+
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 relConfirmPopup.setVisibility(View.GONE);
                 weatherArrayList.remove(positionClicked);
                 weatherAdapter.notifyDataSetChanged();
             }
         });
+
     }
 
     private void populateArrayList() {
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Prishtine", "Raining", "3°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Mitrovice", "Sunny", "13°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Peje", "Cloudy", "8°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Gjilan", "Raining", "4°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Gjakova", "Raining", "5°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Decani", "Raining", "3°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Lipjani", "Cloudy", "5°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Podujeve", "Raining", "4°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Drenasi", "Sunny", "10°C"));
-        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Prizren", "Sunny", "9°C"));
-
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Prishtina", "Raining", "3°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Gjilani", "Snowing", "1°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Peja", "Raining", "2°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Prizreni", "Snowing", "4°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Gjakova", "Raining", "2°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Mitrovica", "Snowing", "3°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Decani", "Raining", "4°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Lipjani", "Snowing", "1°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Drenasi", "Raining", "2°C"));
+        weatherArrayList.add(new Weather(R.mipmap.ic_launcher, "Podujeva", "Snowing", "1°C"));
     }
 
     private void findViews() {

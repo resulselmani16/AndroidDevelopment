@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.FunFactsActivity"
     android:id="@+id/relBackground"
-    >
+    tools:context=".activities.FunFactsActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Did you know?"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/text_size_24"
-        android:layout_marginTop="@dimen/space_30"/>
+        android:layout_marginTop="@dimen/space_30"
+        android:text="@string/did_you_know"
+        android:textSize="@dimen/text_size_24" />
+
     <TextView
-        android:id="@+id/fact"
+        android:id="@+id/tvFact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_20"
+        android:layout_marginEnd="@dimen/space_20"
         android:text="Coca cola was originally green"
         android:layout_centerInParent="true"
         android:textSize="@dimen/text_size_26"
@@ -32,4 +33,5 @@
         android:text="Show Another Fun Fact"
         android:layout_margin="@dimen/space_20"
         />
+
 </RelativeLayout>

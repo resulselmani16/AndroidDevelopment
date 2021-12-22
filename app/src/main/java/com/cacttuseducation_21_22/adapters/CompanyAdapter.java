@@ -11,8 +11,6 @@ import android.widget.TextView;
 import com.cacttuseducation_21_22.R;
 import com.cacttuseducation_21_22.models.Company;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class CompanyAdapter extends BaseAdapter {
@@ -33,26 +31,29 @@ public class CompanyAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
+    public Object getItem(int position) {
         return null;
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int position) {
         return 0;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflater.inflate(R.layout.item_company, null);
-        ImageView ivCompany = view.findViewById(R.id.ivCompany);
-        TextView tvCompanyName = view.findViewById(R.id.tvCompanyName);
-        TextView tvCompanyValue = view.findViewById(R.id.tvCompanyValue);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        convertView = inflater.inflate(R.layout.item_company,null);
 
-        Company company = arrayList.get(i);
+        ImageView ivCompany = convertView.findViewById(R.id.ivCompany);
+        TextView tvCompanyName = convertView.findViewById(R.id.tvCompanyName);
+        TextView tvCompanyValue = convertView.findViewById(R.id.tvCompanyValue);
+
+        Company company = arrayList.get(position);
+
         ivCompany.setImageResource(company.getCompanyImage());
         tvCompanyName.setText(company.getCompanyName());
         tvCompanyValue.setText(company.getCompanyValue());
-        return view;
+
+        return convertView;
     }
 }

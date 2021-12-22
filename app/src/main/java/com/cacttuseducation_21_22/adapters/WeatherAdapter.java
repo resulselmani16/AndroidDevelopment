@@ -32,32 +32,31 @@ public class WeatherAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
+    public Object getItem(int position) {
         return null;
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int position) {
         return 0;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflater.inflate(R.layout.weather_item, null);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        convertView = inflater.inflate(R.layout.weather_item, null);
 
-        ImageView ivWeatherIcon = view.findViewById(R.id.weatherIcon);
-        TextView tvCity = view.findViewById(R.id.tvCity);
-        TextView tvStatus = view.findViewById(R.id.tvStatus);
-        TextView tvTemperature = view.findViewById(R.id.tvTemperature);
+        ImageView ivWeatherIcon = convertView.findViewById(R.id.ivWeatherIcon);
+        TextView tvCity = convertView.findViewById(R.id.tvCity);
+        TextView tvStatus = convertView.findViewById(R.id.tvStatus);
+        TextView tvTemperature = convertView.findViewById(R.id.tvTemperature);
 
-        Weather weather = arrayList.get(i);
+        Weather weather = arrayList.get(position);
 
         ivWeatherIcon.setImageResource(weather.getWeatherImage());
         tvCity.setText(weather.getCity());
         tvStatus.setText(weather.getStatus());
         tvTemperature.setText(weather.getTemperature());
 
-
-        return view;
+        return convertView;
     }
 }
